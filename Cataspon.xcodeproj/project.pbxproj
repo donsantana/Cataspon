@@ -9,13 +9,27 @@
 /* Begin PBXBuildFile section */
 		F43B69E42BC6EB2C00089E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B69E32BC6EB2C00089E9E /* AppDelegate.swift */; };
 		F43B69E62BC6EB2C00089E9E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B69E52BC6EB2C00089E9E /* SceneDelegate.swift */; };
-		F43B69E82BC6EB2C00089E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B69E72BC6EB2C00089E9E /* ViewController.swift */; };
+		F43B69E82BC6EB2C00089E9E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B69E72BC6EB2C00089E9E /* LoginController.swift */; };
 		F43B69EB2BC6EB2C00089E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43B69E92BC6EB2C00089E9E /* Main.storyboard */; };
 		F43B69ED2BC6EB2E00089E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43B69EC2BC6EB2E00089E9E /* Assets.xcassets */; };
 		F43B69F02BC6EB2E00089E9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F43B69EE2BC6EB2E00089E9E /* LaunchScreen.storyboard */; };
 		F43B69FB2BC6EB2E00089E9E /* CatasponTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B69FA2BC6EB2E00089E9E /* CatasponTests.swift */; };
 		F43B6A052BC6EB2E00089E9E /* CatasponUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A042BC6EB2E00089E9E /* CatasponUITests.swift */; };
 		F43B6A072BC6EB2E00089E9E /* CatasponUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A062BC6EB2E00089E9E /* CatasponUITestsLaunchTests.swift */; };
+		F43B6A152BC6EB6000089E9E /* Sponsor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A142BC6EB6000089E9E /* Sponsor.swift */; };
+		F43B6A172BC6ED0B00089E9E /* ContactInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A162BC6ED0B00089E9E /* ContactInformation.swift */; };
+		F43B6A192BC6ED3C00089E9E /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A182BC6ED3C00089E9E /* Client.swift */; };
+		F43B6A1C2BC6EDBC00089E9E /* ClientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A1B2BC6EDBC00089E9E /* ClientsView.swift */; };
+		F43B6A1F2BC6EDF000089E9E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A1E2BC6EDF000089E9E /* APIService.swift */; };
+		F43B6A222BC98D1A00089E9E /* Responsive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A212BC98D1A00089E9E /* Responsive.swift */; };
+		F43B6A262BC9C67D00089E9E /* SponsorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A252BC9C67D00089E9E /* SponsorsView.swift */; };
+		F43B6A282BC9C72500089E9E /* ListElementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A272BC9C72500089E9E /* ListElementsView.swift */; };
+		F43B6A2A2BCAC2B800089E9E /* SponsorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A292BCAC2B800089E9E /* SponsorDetailView.swift */; };
+		F43B6A2D2BCC15FC00089E9E /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A2C2BCC15FC00089E9E /* TopView.swift */; };
+		F43B6A2F2BCDC69D00089E9E /* MockIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F43B6A2E2BCDC69D00089E9E /* MockIcons.xcassets */; };
+		F43B6A322BCEDA5000089E9E /* AddSponsorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A312BCEDA5000089E9E /* AddSponsorView.swift */; };
+		F43B6A352BD2C05900089E9E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A342BD2C05900089E9E /* String.swift */; };
+		F43B6A372BD45CA900089E9E /* UserLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A362BD45CA900089E9E /* UserLogged.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +53,7 @@
 		F43B69E02BC6EB2C00089E9E /* Cataspon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cataspon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43B69E32BC6EB2C00089E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F43B69E52BC6EB2C00089E9E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F43B69E72BC6EB2C00089E9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F43B69E72BC6EB2C00089E9E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		F43B69EA2BC6EB2C00089E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F43B69EC2BC6EB2E00089E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F43B69EF2BC6EB2E00089E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +63,20 @@
 		F43B6A002BC6EB2E00089E9E /* CatasponUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CatasponUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F43B6A042BC6EB2E00089E9E /* CatasponUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatasponUITests.swift; sourceTree = "<group>"; };
 		F43B6A062BC6EB2E00089E9E /* CatasponUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatasponUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F43B6A142BC6EB6000089E9E /* Sponsor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsor.swift; sourceTree = "<group>"; };
+		F43B6A162BC6ED0B00089E9E /* ContactInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInformation.swift; sourceTree = "<group>"; };
+		F43B6A182BC6ED3C00089E9E /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		F43B6A1B2BC6EDBC00089E9E /* ClientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsView.swift; sourceTree = "<group>"; };
+		F43B6A1E2BC6EDF000089E9E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F43B6A212BC98D1A00089E9E /* Responsive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responsive.swift; sourceTree = "<group>"; };
+		F43B6A252BC9C67D00089E9E /* SponsorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorsView.swift; sourceTree = "<group>"; };
+		F43B6A272BC9C72500089E9E /* ListElementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListElementsView.swift; sourceTree = "<group>"; };
+		F43B6A292BCAC2B800089E9E /* SponsorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorDetailView.swift; sourceTree = "<group>"; };
+		F43B6A2C2BCC15FC00089E9E /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
+		F43B6A2E2BCDC69D00089E9E /* MockIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MockIcons.xcassets; sourceTree = "<group>"; };
+		F43B6A312BCEDA5000089E9E /* AddSponsorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSponsorView.swift; sourceTree = "<group>"; };
+		F43B6A342BD2C05900089E9E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F43B6A362BD45CA900089E9E /* UserLogged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogged.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +127,18 @@
 		F43B69E22BC6EB2C00089E9E /* Cataspon */ = {
 			isa = PBXGroup;
 			children = (
+				F43B6A202BC98CF800089E9E /* Utils */,
+				F43B6A132BC6EB4600089E9E /* Models */,
+				F43B6A1A2BC6ED9800089E9E /* Views */,
+				F43B6A1D2BC6EDDB00089E9E /* Services */,
 				F43B69E32BC6EB2C00089E9E /* AppDelegate.swift */,
 				F43B69E52BC6EB2C00089E9E /* SceneDelegate.swift */,
-				F43B69E72BC6EB2C00089E9E /* ViewController.swift */,
+				F43B69E72BC6EB2C00089E9E /* LoginController.swift */,
 				F43B69E92BC6EB2C00089E9E /* Main.storyboard */,
 				F43B69EC2BC6EB2E00089E9E /* Assets.xcassets */,
 				F43B69EE2BC6EB2E00089E9E /* LaunchScreen.storyboard */,
 				F43B69F12BC6EB2E00089E9E /* Info.plist */,
+				F43B6A2E2BCDC69D00089E9E /* MockIcons.xcassets */,
 			);
 			path = Cataspon;
 			sourceTree = "<group>";
@@ -125,6 +158,95 @@
 				F43B6A062BC6EB2E00089E9E /* CatasponUITestsLaunchTests.swift */,
 			);
 			path = CatasponUITests;
+			sourceTree = "<group>";
+		};
+		F43B6A132BC6EB4600089E9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A382BD45CAF00089E9E /* Environment */,
+				F43B6A142BC6EB6000089E9E /* Sponsor.swift */,
+				F43B6A162BC6ED0B00089E9E /* ContactInformation.swift */,
+				F43B6A182BC6ED3C00089E9E /* Client.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F43B6A1A2BC6ED9800089E9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A302BCEDA1A00089E9E /* Relationships */,
+				F43B6A2B2BCC15D900089E9E /* TopView */,
+				F43B6A242BC9C1A800089E9E /* Clients */,
+				F43B6A232BC9C17600089E9E /* Sponsors */,
+				F43B6A272BC9C72500089E9E /* ListElementsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F43B6A1D2BC6EDDB00089E9E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A1E2BC6EDF000089E9E /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F43B6A202BC98CF800089E9E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A332BD2C04700089E9E /* Extensions */,
+				F43B6A212BC98D1A00089E9E /* Responsive.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F43B6A232BC9C17600089E9E /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A252BC9C67D00089E9E /* SponsorsView.swift */,
+				F43B6A292BCAC2B800089E9E /* SponsorDetailView.swift */,
+			);
+			path = Sponsors;
+			sourceTree = "<group>";
+		};
+		F43B6A242BC9C1A800089E9E /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A1B2BC6EDBC00089E9E /* ClientsView.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		F43B6A2B2BCC15D900089E9E /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A2C2BCC15FC00089E9E /* TopView.swift */,
+			);
+			path = TopView;
+			sourceTree = "<group>";
+		};
+		F43B6A302BCEDA1A00089E9E /* Relationships */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A312BCEDA5000089E9E /* AddSponsorView.swift */,
+			);
+			path = Relationships;
+			sourceTree = "<group>";
+		};
+		F43B6A332BD2C04700089E9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A342BD2C05900089E9E /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F43B6A382BD45CAF00089E9E /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6A362BD45CA900089E9E /* UserLogged.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43B6A2F2BCDC69D00089E9E /* MockIcons.xcassets in Resources */,
 				F43B69F02BC6EB2E00089E9E /* LaunchScreen.storyboard in Resources */,
 				F43B69ED2BC6EB2E00089E9E /* Assets.xcassets in Resources */,
 				F43B69EB2BC6EB2C00089E9E /* Main.storyboard in Resources */,
@@ -258,9 +381,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F43B69E82BC6EB2C00089E9E /* ViewController.swift in Sources */,
+				F43B6A2D2BCC15FC00089E9E /* TopView.swift in Sources */,
+				F43B6A2A2BCAC2B800089E9E /* SponsorDetailView.swift in Sources */,
+				F43B6A282BC9C72500089E9E /* ListElementsView.swift in Sources */,
+				F43B6A152BC6EB6000089E9E /* Sponsor.swift in Sources */,
+				F43B6A262BC9C67D00089E9E /* SponsorsView.swift in Sources */,
+				F43B6A172BC6ED0B00089E9E /* ContactInformation.swift in Sources */,
+				F43B6A192BC6ED3C00089E9E /* Client.swift in Sources */,
+				F43B69E82BC6EB2C00089E9E /* LoginController.swift in Sources */,
 				F43B69E42BC6EB2C00089E9E /* AppDelegate.swift in Sources */,
+				F43B6A1C2BC6EDBC00089E9E /* ClientsView.swift in Sources */,
+				F43B6A322BCEDA5000089E9E /* AddSponsorView.swift in Sources */,
+				F43B6A1F2BC6EDF000089E9E /* APIService.swift in Sources */,
+				F43B6A372BD45CA900089E9E /* UserLogged.swift in Sources */,
+				F43B6A352BD2C05900089E9E /* String.swift in Sources */,
 				F43B69E62BC6EB2C00089E9E /* SceneDelegate.swift in Sources */,
+				F43B6A222BC98D1A00089E9E /* Responsive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
