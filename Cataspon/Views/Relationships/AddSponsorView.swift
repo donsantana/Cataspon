@@ -21,21 +21,22 @@ struct AddSponsorView: View {
         NavigationView {
             Form {
                 Section(header: Text("Sponsor")) {
-                    Text("Name:").font(.subheadline)
+                    Text("Name").font(.subheadline)
                     TextField("name", text: $name, prompt: Text("Enter the Sponsor name"))
                 }
                 
                 Section(header: Text("Contact Information")) {
-                    Text("Email:").font(.subheadline)
+                    Text("Email").font(.subheadline)
                     TextField("email", text: $email, prompt: Text("Enter the email address"))
-                    Text("Phone number:").font(.subheadline)
+                        .keyboardType(.emailAddress).textInputAutocapitalization(.never)
+                    Text("Phone number").font(.subheadline)
                     TextField("phone", text: $phoneNumber, prompt: Text("Enter the phone number"))
                         .onChange(of: phoneNumber) {
                             if !phoneNumber.isEmpty {
                                 phoneNumber = phoneNumber.formatPhoneNumber()
                             }
                         }
-                    Text("WebUrl:").font(.subheadline)
+                    Text("WebUrl").font(.subheadline)
                     TextField("webUrl", text: $webUrl, prompt: Text("Enter the web site url"))
                 }
                 

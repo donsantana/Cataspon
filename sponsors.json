@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "name": "Google",
+        "description": "Focusing on online advertising, search engine technology, cloud computing.",
+        "contactInformation": {
+            "email": "info@gmail.com",
+            "phoneNumber": "7864475555",
+            "webURL": "url",
+            "logoURL": "googleIcon"
+        }
+    },
+    {
+        "id": "2",
+        "name": "Meta",
+        "description": "Meta builds technologies that help people connect, find communities and grow businesses.",
+        "contactInformation": {
+            "email": "info2@meta.com",
+            "phoneNumber": "7864475556",
+            "webURL": "url2",
+            "logoURL": "metaIcon"
+        }
+    },
+    {
+        "id": "3",
+        "name": "Tesla",
+        "description": "It designs, develops, manufactures, sells, and leases electric vehicles, energy generation, and storage systems.",
+        "contactInformation": {
+            "email": "info@tesla.com",
+            "phoneNumber": "7864475557",
+            "webURL": "url3",
+            "logoURL": "teslaIcon"
+        }
+    },
+    {
+        "id": "4",
+        "name": "Instagram",
+        "description": "It is a photo and video sharing social networking service owned by Meta Platforms.",
+        "contactInformation": {
+            "email": "info@instagram.com",
+            "phoneNumber": "78644755545",
+            "webURL": "url",
+            "logoURL": "instagramIcon"
+        }
+    },
+    {
+        "id": "5",
+        "name": "X",
+        "description": "From breaking news and entertainment to sports and politics, get the full story with all the live commentary.",
+        "contactInformation": {
+            "email": "info@x.com",
+            "phoneNumber": "7864475586",
+            "webURL": "url2",
+            "logoURL": "xIcon"
+        }
+    },
+    {
+        "id": "6",
+        "name": "Neflix",
+        "description": "It is an American subscription video on-demand over-the-top streaming service.",
+        "contactInformation": {
+            "email": "info@netflix.com",
+            "phoneNumber": "7864434557",
+            "webURL": "url3",
+            "logoURL": "netflixIcon"
+        }
+    }
+]

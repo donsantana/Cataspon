@@ -30,6 +30,10 @@
 		F43B6A322BCEDA5000089E9E /* AddSponsorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A312BCEDA5000089E9E /* AddSponsorView.swift */; };
 		F43B6A352BD2C05900089E9E /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A342BD2C05900089E9E /* String.swift */; };
 		F43B6A372BD45CA900089E9E /* UserLogged.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6A362BD45CA900089E9E /* UserLogged.swift */; };
+		F43B6B072BD98F4400089E9E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6B062BD98F4300089E9E /* LoginView.swift */; };
+		F43B6B092BE04DDB00089E9E /* BundleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F43B6B082BE04DDB00089E9E /* BundleAPI.swift */; };
+		F43B6B0D2BE2EB1D00089E9E /* clients.json in Resources */ = {isa = PBXBuildFile; fileRef = F43B6B0C2BE2EB1D00089E9E /* clients.json */; };
+		F43B6B112BE2F8F200089E9E /* sponsors.json in Resources */ = {isa = PBXBuildFile; fileRef = F43B6B102BE2F8F100089E9E /* sponsors.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		F43B6A312BCEDA5000089E9E /* AddSponsorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSponsorView.swift; sourceTree = "<group>"; };
 		F43B6A342BD2C05900089E9E /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F43B6A362BD45CA900089E9E /* UserLogged.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogged.swift; sourceTree = "<group>"; };
+		F43B6B062BD98F4300089E9E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F43B6B082BE04DDB00089E9E /* BundleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleAPI.swift; sourceTree = "<group>"; };
+		F43B6B0C2BE2EB1D00089E9E /* clients.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = clients.json; path = Cataspon/clients.json; sourceTree = "<group>"; };
+		F43B6B102BE2F8F100089E9E /* sponsors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sponsors.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,8 @@
 		F43B69D72BC6EB2C00089E9E = {
 			isa = PBXGroup;
 			children = (
+				F43B6B102BE2F8F100089E9E /* sponsors.json */,
+				F43B6B0C2BE2EB1D00089E9E /* clients.json */,
 				F43B69E22BC6EB2C00089E9E /* Cataspon */,
 				F43B69F92BC6EB2E00089E9E /* CatasponTests */,
 				F43B6A032BC6EB2E00089E9E /* CatasponUITests */,
@@ -139,6 +149,7 @@
 				F43B69EE2BC6EB2E00089E9E /* LaunchScreen.storyboard */,
 				F43B69F12BC6EB2E00089E9E /* Info.plist */,
 				F43B6A2E2BCDC69D00089E9E /* MockIcons.xcassets */,
+				F43B6B062BD98F4300089E9E /* LoginView.swift */,
 			);
 			path = Cataspon;
 			sourceTree = "<group>";
@@ -187,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				F43B6A1E2BC6EDF000089E9E /* APIService.swift */,
+				F43B6B082BE04DDB00089E9E /* BundleAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -353,9 +365,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F43B6B0D2BE2EB1D00089E9E /* clients.json in Resources */,
 				F43B6A2F2BCDC69D00089E9E /* MockIcons.xcassets in Resources */,
 				F43B69F02BC6EB2E00089E9E /* LaunchScreen.storyboard in Resources */,
 				F43B69ED2BC6EB2E00089E9E /* Assets.xcassets in Resources */,
+				F43B6B112BE2F8F200089E9E /* sponsors.json in Resources */,
 				F43B69EB2BC6EB2C00089E9E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,11 +401,13 @@
 				F43B6A152BC6EB6000089E9E /* Sponsor.swift in Sources */,
 				F43B6A262BC9C67D00089E9E /* SponsorsView.swift in Sources */,
 				F43B6A172BC6ED0B00089E9E /* ContactInformation.swift in Sources */,
+				F43B6B072BD98F4400089E9E /* LoginView.swift in Sources */,
 				F43B6A192BC6ED3C00089E9E /* Client.swift in Sources */,
 				F43B69E82BC6EB2C00089E9E /* LoginController.swift in Sources */,
 				F43B69E42BC6EB2C00089E9E /* AppDelegate.swift in Sources */,
 				F43B6A1C2BC6EDBC00089E9E /* ClientsView.swift in Sources */,
 				F43B6A322BCEDA5000089E9E /* AddSponsorView.swift in Sources */,
+				F43B6B092BE04DDB00089E9E /* BundleAPI.swift in Sources */,
 				F43B6A1F2BC6EDF000089E9E /* APIService.swift in Sources */,
 				F43B6A372BD45CA900089E9E /* UserLogged.swift in Sources */,
 				F43B6A352BD2C05900089E9E /* String.swift in Sources */,
@@ -581,6 +597,7 @@
 				DEVELOPMENT_TEAM = 48G34LX7UB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cataspon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cataspon;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -609,6 +626,7 @@
 				DEVELOPMENT_TEAM = 48G34LX7UB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cataspon/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Cataspon;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

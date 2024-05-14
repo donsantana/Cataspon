@@ -8,20 +8,24 @@
 import SwiftUI
 
 struct SponsorsView: View {
-    @State private var sponsorsList: [Sponsor] = []
+    @State private var sponsorsList: [Sponsor] = Sponsor.allMockSponsors
     @State var showingSponsorDetail = false
     @State var showAddSponsorView = false
     @EnvironmentObject var clientSelected: ClientSelected
-    @AppStorage("userTypeKey") var userLoggedType: String = ""
+    @EnvironmentObject var userLoggedType: UserLogged
     
     //var client: Client
     var body: some View {
         var sponsorSelected: Sponsor?
-        TopView(titleView: "Sponsors")
+        TopView(titleView: "\(userLoggedType.userType == .influencer ? "My " : "")Sponsors")
         Divider()
         ScrollView {
             VStack(alignment: .leading) {
-                HStack {
+                HStack() {
+                    Image(uiImage: UIImage(named: (clientSelected.client?.contactInformation.logoURL)!)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: Responsive.shared.widthFloatPercent(percent: 10),height:  Responsive.shared.widthFloatPercent(percent: 10))
                     Text(clientSelected.client?.name ?? "No name found").font(.headline).padding(.leading, 10)
                     Spacer()
                     Button("", systemImage: "plus") {
@@ -29,7 +33,7 @@ struct SponsorsView: View {
                     }.fullScreenCover(isPresented: $showAddSponsorView) {
                         AddSponsorView()
                     }
-                    .opacity(userLoggedType == "Influencer" ? 1 : 0)
+                    .opacity(userLoggedType.userType == .influencer ? 1 : 0)
                 }
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: Responsive.shared.widthFloatPercent(percent: 70)))]) {
                     ForEach(sponsorsList.indices, id: \.self) { index in
@@ -46,20 +50,23 @@ struct SponsorsView: View {
                     }
                     .padding(.trailing, 10)
                     .padding(.top, 5)
-                    .padding(.leading, 10)
                 }
+            } .padding(.leading, 10)
+        }
+        .task {
+            if let client = clientSelected.client {
+                sponsorsList = client.getSponsors()
             }
         }
-        
         .onAppear {
-            APIService.shared.getSponsors(url: "",clientID: clientSelected.client?.name ?? "") { result in
-                switch result {
-                case .success(let sponsors):
-                    sponsorsList = sponsors
-                case .failure(let error):
-                    showAlert(error)
-                }
-            }
+//            APIService.shared.getSponsors(url: "",clientID: clientSelected.client?.name ?? "") { result in
+//                switch result {
+//                case .success(let sponsors):
+//                    sponsorsList = sponsors
+//                case .failure(let error):
+//                    showAlert(error)
+//                }
+//            }
         }
     }
     
@@ -87,7 +94,7 @@ struct SponsorCardView: View {
                 base.fill(.thinMaterial).opacity(0.4)
                 base.strokeBorder(.gray,lineWidth: 2)
                 HStack(spacing: 10) {
-                    Image(uiImage: UIImage(named: sponsor.contactInformation.logoUrl)!)
+                    Image(uiImage: UIImage(named: sponsor.contactInformation.logoURL)!)
                         .resizable()
                         .frame(width: Responsive.shared.widthFloatPercent(percent: 20), height: Responsive.shared.widthFloatPercent(percent: 20))
                         .padding(.leading, 10)

@@ -8,7 +8,12 @@
 import Foundation
 
 
-struct ContactInformation: Decodable {
-    var id = UUID().uuidString
-    var email, phoneNumber, webUrl, logoUrl: String
+struct ContactInformation: Codable {
+    let email, phoneNumber, webURL, logoURL: String
+    
+//    enum CodingKeys: String, CodingKey {
+//        case email, phoneNumber
+//        case webURL = "webUrl"
+//        case logoURL = "logoUrl"
+//    }
 }

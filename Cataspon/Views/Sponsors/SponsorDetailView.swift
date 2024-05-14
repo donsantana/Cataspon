@@ -14,7 +14,7 @@ struct SponsorDetailView: View {
     var body: some View {
         VStack(spacing: 25) {
             TopView(titleView: "Sponsor Information")
-            Image(uiImage: UIImage(named: sponsor.contactInformation.logoUrl)!)
+            Image(uiImage: UIImage(named: sponsor.contactInformation.logoURL)!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: Responsive.shared.widthFloatPercent(percent: 40),height:  Responsive.shared.widthFloatPercent(percent: 20))
@@ -34,7 +34,7 @@ struct SponsorDetailView: View {
 //            }
             Text(sponsor.name)
                 .font(.title)
-            Text(sponsor.description)
+            Text(sponsor.description).padding(.all, 10)
             Button(sponsor.contactInformation.phoneNumber) {
                 //TODO: Implement the call
                 callNumber(number: sponsor.contactInformation.phoneNumber)
@@ -81,5 +81,5 @@ struct SponsorDetailView: View {
 }
 
 #Preview {
-    SponsorDetailView(sponsor: Sponsor(id: "1", name: "Sponsor One", description: "Sponsor ActivityDescription", contactInformation: ContactInformation(email: "sponsor@test.com", phoneNumber: "7864475555", webUrl: "url", logoUrl: "logoUrl")))
+    SponsorDetailView(sponsor: Sponsor.sampleSponsor)
 }

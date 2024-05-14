@@ -7,7 +7,15 @@
 
 import Foundation
 
-struct Client: Decodable {
-    var id, name: String
-    var contactInformation: ContactInformation
+struct Client: Codable {
+    let id, name: String
+    let sponsors: [String]
+    let contactInformation: ContactInformation
+    
+    static let allMockClients: [Client] = Bundle.main.decode(file: "clients.json")
+    static let sampleClient: Client = allMockClients[0]
+    
+    func getSponsors() -> [Sponsor] {
+        return Sponsor.allMockSponsors.filter({sponsors.contains($0.id)})
+    }
 }
