@@ -149,7 +149,6 @@
 				F43B69EE2BC6EB2E00089E9E /* LaunchScreen.storyboard */,
 				F43B69F12BC6EB2E00089E9E /* Info.plist */,
 				F43B6A2E2BCDC69D00089E9E /* MockIcons.xcassets */,
-				F43B6B062BD98F4300089E9E /* LoginView.swift */,
 			);
 			path = Cataspon;
 			sourceTree = "<group>";
@@ -185,6 +184,7 @@
 		F43B6A1A2BC6ED9800089E9E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F45FE2E02BF5141000D197D5 /* Login */,
 				F43B6A302BCEDA1A00089E9E /* Relationships */,
 				F43B6A2B2BCC15D900089E9E /* TopView */,
 				F43B6A242BC9C1A800089E9E /* Clients */,
@@ -259,6 +259,14 @@
 				F43B6A362BD45CA900089E9E /* UserLogged.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		F45FE2E02BF5141000D197D5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F43B6B062BD98F4300089E9E /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

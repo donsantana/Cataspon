@@ -11,6 +11,8 @@ struct SponsorDetailView: View {
     var sponsor: Sponsor
     @State var isShowingCallAlert = false
     @State var isShowingEmailAlert = false
+    @State var isShowingPromotionAlert = false
+    private let promotions = ["promotionBanner", "promotionBanner1"]
     var body: some View {
         VStack(spacing: 25) {
             TopView(titleView: "Sponsor Information")
@@ -49,8 +51,29 @@ struct SponsorDetailView: View {
             .alert(isPresented: $isShowingEmailAlert) {
                 Alert(title: Text("Email"), message: Text("This device is unavailable to send emails."), dismissButton: .cancel())
             }
-            Spacer()
+            ScrollView {
+                Text("Promotions").font(.headline).foregroundStyle(.green)
+                VStack {
+                    ForEach(promotions, id: \.self) { promotion in
+                        Image(uiImage: UIImage(named: promotion)!)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: Responsive.shared.widthFloatPercent(percent: 100),height:  Responsive.shared.widthFloatPercent(percent: 45))
+                            .clipShape(RoundedRectangle(cornerRadius: 30))
+                            .onTapGesture {
+                                showPromotionAlert()
+                            }
+                            .alert(isPresented: $isShowingPromotionAlert) {
+                                Alert(title: Text("Promotion Approved"), message: Text("You are approved for this promotion"), dismissButton: .default(Text("Accept")))
+                            }
+                    }
+                }
+            }.background(.thinMaterial)
         }
+    }
+    
+    internal func showPromotionAlert() {
+        isShowingPromotionAlert = true
     }
     
     func callNumber(number: String) {
