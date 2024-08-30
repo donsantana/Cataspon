@@ -6,7 +6,7 @@
         "contactInformation": {
             "email": "info@gmail.com",
             "phoneNumber": "7864475555",
-            "webURL": "url",
+            "webURL": "https://www.google.com",
             "logoURL": "googleIcon"
         }
     },
@@ -17,7 +17,7 @@
         "contactInformation": {
             "email": "info2@meta.com",
             "phoneNumber": "7864475556",
-            "webURL": "url2",
+            "webURL": "https://www.facebook.com",
             "logoURL": "metaIcon"
         }
     },
@@ -28,7 +28,7 @@
         "contactInformation": {
             "email": "info@tesla.com",
             "phoneNumber": "7864475557",
-            "webURL": "url3",
+            "webURL": "https://www.tesla.com",
             "logoURL": "teslaIcon"
         }
     },
@@ -39,7 +39,7 @@
         "contactInformation": {
             "email": "info@instagram.com",
             "phoneNumber": "78644755545",
-            "webURL": "url",
+            "webURL": "https://www.instagram.com",
             "logoURL": "instagramIcon"
         }
     },
@@ -50,18 +50,18 @@
         "contactInformation": {
             "email": "info@x.com",
             "phoneNumber": "7864475586",
-            "webURL": "url2",
+            "webURL": "https://www.x.com",
             "logoURL": "xIcon"
         }
     },
     {
         "id": "6",
-        "name": "Neflix",
+        "name": "Netflix",
         "description": "It is an American subscription video on-demand over-the-top streaming service.",
         "contactInformation": {
             "email": "info@netflix.com",
             "phoneNumber": "7864434557",
-            "webURL": "url3",
+            "webURL": "https://www.netflix.com",
             "logoURL": "netflixIcon"
         }
     }

@@ -14,61 +14,93 @@ struct SponsorDetailView: View {
     @State var isShowingPromotionAlert = false
     private let promotions = ["promotionBanner", "promotionBanner1"]
     var body: some View {
-        VStack(spacing: 25) {
+        VStack(alignment: .leading,spacing: 10) {
             TopView(titleView: "Sponsor Information")
-            Image(uiImage: UIImage(named: sponsor.contactInformation.logoURL)!)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: Responsive.shared.widthFloatPercent(percent: 40),height:  Responsive.shared.widthFloatPercent(percent: 20))
-//            AsyncImage(url: URL(string: sponsor.contactInformation.logoUrl)) { image in
-//                image
-//                    .resizable()
-//                    .scaledToFit()
-//            } placeholder: {
-//                Image(.defaultLogo)
-//            }            
-//            AsyncImage(url: URL(string: sponsor.contactInformation.logoUrl)) { image in
-//                image
-//                    .resizable()
-//                    .scaledToFit()
-//            } placeholder: {
-//                Image(.defaultLogo)
-//            }
-            Text(sponsor.name)
-                .font(.title)
-            Text(sponsor.description).padding(.all, 10)
-            Button(sponsor.contactInformation.phoneNumber) {
-                //TODO: Implement the call
-                callNumber(number: sponsor.contactInformation.phoneNumber)
-            }
-            .alert(isPresented: $isShowingCallAlert) {
-                Alert(title: Text("Phone Call"), message: Text("This device is unavailable to make the phone call."), dismissButton: .cancel())
-            }
-            Button(sponsor.contactInformation.email) {
-                //TODO: Implement the call
-                sendEmail(sponsorEmail: sponsor.contactInformation.email)
-            }
-            .alert(isPresented: $isShowingEmailAlert) {
-                Alert(title: Text("Email"), message: Text("This device is unavailable to send emails."), dismissButton: .cancel())
-            }
-            ScrollView {
-                Text("Promotions").font(.headline).foregroundStyle(.green)
-                VStack {
-                    ForEach(promotions, id: \.self) { promotion in
-                        Image(uiImage: UIImage(named: promotion)!)
+            List {
+                Section {
+                    HStack(spacing: 10) {
+                        Image(uiImage: UIImage(named: sponsor.contactInformation.logoURL)!)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: Responsive.shared.widthFloatPercent(percent: 100),height:  Responsive.shared.widthFloatPercent(percent: 45))
-                            .clipShape(RoundedRectangle(cornerRadius: 30))
-                            .onTapGesture {
-                                showPromotionAlert()
-                            }
-                            .alert(isPresented: $isShowingPromotionAlert) {
-                                Alert(title: Text("Promotion Approved"), message: Text("You are approved for this promotion"), dismissButton: .default(Text("Accept")))
-                            }
+                            .frame(width: Responsive.shared.widthFloatPercent(percent: 30))
+                            .clipShape(.circle)
+                        VStack(alignment: .leading) {
+                            Text(sponsor.name)
+                                .font(.title2).fontWeight(.bold)
+                            Text(sponsor.description).font(.system(size: 14)).fontWeight(.light)
+                        }
+                    }
+                    
+                    //            AsyncImage(url: URL(string: sponsor.contactInformation.logoUrl)) { image in
+                    //                image
+                    //                    .resizable()
+                    //                    .scaledToFit()
+                    //            } placeholder: {
+                    //                Image(.defaultLogo)
+                    //            }
+                }
+                Section("Contact Information") {
+                    Button {
+                        //TODO: Implement the call
+                        callNumber(number: sponsor.contactInformation.phoneNumber)
+                    } label: {
+                        HStack {
+                            Image(systemName: "phone")
+                            Text(sponsor.contactInformation.phoneNumber)
+                                .fontWeight(.regular)
+                                .font(.system(size: 14))
+                        }
+                    }
+                    .alert(isPresented: $isShowingCallAlert) {
+                        Alert(title: Text("Phone Call"), message: Text("This device is unavailable to make the phone call."), dismissButton: .cancel())
+                    }
+                    Button {
+                        //TODO: Implement the call
+                        sendEmail(sponsorEmail: sponsor.contactInformation.email)
+                    } label: {
+                        HStack {
+                            Image(systemName: "mail")
+                            Text(sponsor.contactInformation.email)
+                                .fontWeight(.regular)
+                                .font(.system(size: 14))
+                        }
+                    }
+                    .alert(isPresented: $isShowingEmailAlert) {
+                        Alert(title: Text("Email"), message: Text("This device is unavailable to send emails."), dismissButton: .cancel())
+                    }
+                    Button {
+                        //TODO: Implement the call
+                        openWebsite(sponsorWeb: sponsor.contactInformation.webURL)
+                    } label: {
+                        HStack {
+                            Image(systemName: "network")
+                            Text(sponsor.contactInformation.webURL)
+                                .fontWeight(.regular)
+                                .font(.system(size: 14))
+                        }
+                    }
+                    .alert(isPresented: $isShowingEmailAlert) {
+                        Alert(title: Text("Web"), message: Text("This device is unavailable to open the website."), dismissButton: .cancel())
                     }
                 }
-            }.background(.thinMaterial)
+                
+                Section("Promotions") {
+                    VStack {
+                        ForEach(promotions, id: \.self) { promotion in
+                            Image(uiImage: UIImage(named: promotion)!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .onTapGesture {
+                                    showPromotionAlert()
+                                }
+                                .alert(isPresented: $isShowingPromotionAlert) {
+                                    Alert(title: Text("Promotion Approved"), message: Text("You are approved for this promotion"), dismissButton: .default(Text("Accept")))
+                                }
+                        }
+                    }
+                }
+            }
         }
     }
     
@@ -76,7 +108,7 @@ struct SponsorDetailView: View {
         isShowingPromotionAlert = true
     }
     
-    func callNumber(number: String) {
+    internal func callNumber(number: String) {
         if let phoneCallURL = URL(string: "tel://+\(number)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
@@ -87,7 +119,7 @@ struct SponsorDetailView: View {
         }
     }
     
-    func sendEmail(sponsorEmail: String) {
+    internal func sendEmail(sponsorEmail: String) {
         let email = "mailto://"
         let emailformatted = email + email // from MongoDB Atlas
         guard let url = URL(string: emailformatted) else {
@@ -100,6 +132,10 @@ struct SponsorDetailView: View {
         } else {
             isShowingEmailAlert = true
         }
+    }
+    
+    internal func openWebsite(sponsorWeb: String) {
+        
     }
 }
 

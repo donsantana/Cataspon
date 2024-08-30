@@ -15,7 +15,7 @@ struct TopView: View {
         HStack {
             Spacer()
             Text(titleView)
-                .font(.headline)
+                .font(.title2)
             Spacer()
             Button("", systemImage: "xmark") {
                 dismiss()
