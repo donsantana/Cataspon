@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SponsorDetailView: View {
+    @Environment(\.openURL) var openURL
     var sponsor: Sponsor
     @State var isShowingCallAlert = false
     @State var isShowingEmailAlert = false
@@ -135,7 +136,8 @@ struct SponsorDetailView: View {
     }
     
     internal func openWebsite(sponsorWeb: String) {
-        
+        guard let webSite = URL(string: sponsorWeb) else {return}
+        openURL(webSite)
     }
 }
 

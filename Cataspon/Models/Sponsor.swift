@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-struct Sponsor: Decodable {
+struct Sponsor: Encodable, Decodable {
     var id, name, description: String
     var contactInformation: ContactInformation
     

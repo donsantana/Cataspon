@@ -27,7 +27,7 @@ struct LoginView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: Responsive.shared.widthFloatPercent(percent: 50),height:  Responsive.shared.widthFloatPercent(percent: 50))
-            Button("As Influence") {
+            Button("As Influencer") {
                 clientSelected.client = Client(id: "1", name: "Influencer One", sponsors: ["1","4","6"], contactInformation: ContactInformation(email: "test@test.com", phoneNumber: "7864475555", webURL: "url", logoURL: "influencer1"))
                 moveToInfluencerHub()
             }

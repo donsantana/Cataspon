@@ -21,8 +21,9 @@ struct TopView: View {
                 dismiss()
             }.foregroundColor(.black)
                 .opacity(showCloseBtn ? 1 : 0)
-        }.padding(.trailing, 20)
-            .padding(.bottom, 20)
+        }
+        .padding(.trailing, 20)
+            .padding(.bottom, 10)
     }
 }
 

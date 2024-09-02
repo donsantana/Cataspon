@@ -9,20 +9,26 @@ import SwiftUI
 import PhotosUI
 
 struct AddSponsorView: View {
+    @Environment(\.dismiss) private var dismiss
     @State var name: String = ""
+    @State var description: String = ""
     @State var email: String = ""
     @State var phoneNumber: String = ""
     @State var webUrl: String = ""
     @State var sponsorItem: PhotosPickerItem?
     @State var sponsorLogo: Image?
+    @State var showMessage = false
+    @State var addSponsorTitle = ""
+    @State var addSponsorMessage = ""
     
     var body: some View {
-        TopView(titleView: "New Sponsor")
-        NavigationView {
+        NavigationStack {
             Form {
                 Section(header: Text("Sponsor")) {
                     Text("Name").font(.subheadline)
                     TextField("name", text: $name, prompt: Text("Enter the Sponsor name"))
+                    Text("Business description").font(.subheadline)
+                    TextField("description", text: $description, prompt: Text("Enter the Sponsor description"))
                 }
                 
                 Section(header: Text("Contact Information")) {
@@ -37,7 +43,7 @@ struct AddSponsorView: View {
                             }
                         }
                     Text("WebUrl").font(.subheadline)
-                    TextField("webUrl", text: $webUrl, prompt: Text("Enter the web site url"))
+                    TextField("webUrl", text: $webUrl, prompt: Text("Enter the web site url")).textInputAutocapitalization(.never)
                 }
                 
                 Section(header: Text("Sponsor Logo")) {
@@ -61,7 +67,55 @@ struct AddSponsorView: View {
                         }
                     }
                 }
+                
+                Section {
+                    Button {
+                        addNewSponsor()
+                    } label: {
+                        Text("Add Sponsor")
+                            .frame(width: UIScreen.main.bounds.width - 40, height: 35)
+                            .foregroundStyle(.white)
+                    }
+                    .background(Color(.systemBlue))
+                    .clipShape(.rect(cornerRadius: 10))
+                    .alert(isPresented: $showMessage) {
+                        Alert(title: Text(addSponsorTitle), message: Text(addSponsorMessage), dismissButton: .default(Text("Acept")))
+                    }
+
+                }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("", systemImage: "xmark") {
+                        dismiss()
+                    }
+                }
+            }
+            .navigationTitle("New sponsor")
+        }
+        
+    }
+    
+    func addNewSponsor() {
+        let newSponsor = Sponsor(id: String(Int.random(in: 0..<1000)), name: name, description: description, contactInformation: ContactInformation(email: email, phoneNumber: phoneNumber, webURL: webUrl, logoURL: "test"))
+        var currentSponsors = Sponsor.allMockSponsors
+        currentSponsors.append(newSponsor)
+
+        do {
+            let fileURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent("sponsors.json")
+            
+            let encoder = JSONEncoder()
+            try encoder.encode(currentSponsors).write(to: fileURL)
+            
+            addSponsorTitle = "Success"
+            addSponsorMessage = "The new sponsor was added successfully"
+            showMessage = true
+        } catch {
+            addSponsorTitle = "Some error"
+            addSponsorMessage = error.localizedDescription
+            showMessage = true
+            print(error.localizedDescription)
         }
     }
     
