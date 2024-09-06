@@ -81,7 +81,7 @@ struct AddSponsorView: View {
                     .alert(isPresented: $showMessage) {
                         Alert(title: Text(addSponsorTitle), message: Text(addSponsorMessage), dismissButton: .default(Text("Acept")))
                     }
-
+                    
                 }
             }
             .toolbar {
@@ -89,6 +89,7 @@ struct AddSponsorView: View {
                     Button("", systemImage: "xmark") {
                         dismiss()
                     }
+                    .tint(.black)
                 }
             }
             .navigationTitle("New sponsor")

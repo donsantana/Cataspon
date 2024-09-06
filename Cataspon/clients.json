@@ -64,49 +64,5 @@
             "webURL": "url4",
             "logoURL": "influencer1"
         }
-    },
-    {
-        "id": "7",
-        "name": "Influencer Seven",
-        "sponsors":["3","4","5","6"],
-        "contactInformation": {
-            "email": "test4@test.com",
-            "phoneNumber": "7864475556",
-            "webURL": "url4",
-            "logoURL": "influencer2"
-        }
-    },
-    {
-        "id": "8",
-        "name": "Influencer Eigth",
-        "sponsors":["3","4","5","6"],
-        "contactInformation": {
-            "email": "test4@test.com",
-            "phoneNumber": "7864475556",
-            "webURL": "url4",
-            "logoURL": "influencer2"
-        }
-    },
-    {
-        "id": "9",
-        "name": "Influencer Nine",
-        "sponsors":["3","4","5","6"],
-        "contactInformation": {
-            "email": "test4@test.com",
-            "phoneNumber": "7864475556",
-            "webURL": "url4",
-            "logoURL": "influencer4"
-        }
-    },
-    {
-        "id": "10",
-        "name": "Influencer Ten",
-        "sponsors":["3","4","5","6"],
-        "contactInformation": {
-            "email": "test4@test.com",
-            "phoneNumber": "7864475556",
-            "webURL": "url4",
-            "logoURL": "influencer2"
-        }
     }
 ]

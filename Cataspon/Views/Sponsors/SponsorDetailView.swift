@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct SponsorDetailView: View {
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.openURL) var openURL
     var sponsor: Sponsor
     @State var isShowingCallAlert = false
     @State var isShowingEmailAlert = false
     @State var isShowingPromotionAlert = false
     private let promotions = ["promotionBanner", "promotionBanner1"]
+    
     var body: some View {
-        VStack(alignment: .leading,spacing: 10) {
-            TopView(titleView: "Sponsor Information")
+        NavigationStack {
             List {
                 Section {
                     HStack(spacing: 10) {
@@ -24,7 +25,7 @@ struct SponsorDetailView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: Responsive.shared.widthFloatPercent(percent: 30))
-                            .clipShape(.circle)
+                            .clipShape(.rect(cornerRadius: 10))
                         VStack(alignment: .leading) {
                             Text(sponsor.name)
                                 .font(.title2).fontWeight(.bold)
@@ -102,6 +103,14 @@ struct SponsorDetailView: View {
                     }
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("", systemImage: "xmark") {
+                        dismiss()
+                    }.tint(.black)
+                }
+            }
+            .navigationTitle("Sponsor")
         }
     }
     

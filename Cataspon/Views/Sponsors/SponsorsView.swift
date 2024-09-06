@@ -16,11 +16,8 @@ struct SponsorsView: View {
     @EnvironmentObject var clientSelected: ClientSelected
     @EnvironmentObject var userLoggedType: UserLogged
     
-    //var client: Client
     var body: some View {
         var sponsorSelected: Sponsor?
-//        TopView(titleView: "\(userLoggedType.userType == .influencer ? "My " : "")Sponsors")
-//        Divider()
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading) {
@@ -37,6 +34,9 @@ struct SponsorsView: View {
                             AddSponsorView()
                         }
                         .opacity(userLoggedType.userType == .influencer ? 1 : 0)
+                        .transaction { transaction in
+                            transaction.disablesAnimations = true
+                        }
                     }
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: Responsive.shared.widthFloatPercent(percent: 70)))]) {
                         ForEach(searchResults.indices, id: \.self) { index in
@@ -50,6 +50,9 @@ struct SponsorsView: View {
                                     showingSponsorDetail = true
                                     sponsorSelected = searchResults[index]
                                 }
+                                .transaction { transaction in
+                                    transaction.disablesAnimations = true
+                                }
                         }
                         .padding(.trailing, 10)
                         .padding(.top, 5)
@@ -60,7 +63,7 @@ struct SponsorsView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "xmark") {
                         dismiss()
-                    }//.foregroundColor(.black)
+                    }.tint(.black)
                 }
             }
             .navigationTitle("\(userLoggedType.userType == .influencer ? "My " : "")Sponsors")

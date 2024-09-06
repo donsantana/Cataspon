@@ -32,10 +32,16 @@ struct LoginView: View {
                 moveToInfluencerHub()
             }
             .buttonStyle(.bordered)
+            .transaction { transaction in
+                transaction.disablesAnimations = true
+            }
             Button("As Guest") {
                 moveToGuestHub()
             }
             .buttonStyle(.bordered)
+            .transaction { transaction in
+                transaction.disablesAnimations = true
+            }
         }.fullScreenCover(isPresented: $isLogged) {
             if userLogged.userType == .guest {
                 ClientsView()

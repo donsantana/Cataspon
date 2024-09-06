@@ -15,20 +15,21 @@ struct ClientsView: View {
     @ObservedObject var clientSelected = ClientSelected()
     
     var body: some View {
-        //TopView(titleView: "Influencers")
-        //Divider()
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: Responsive.shared.widthFloatPercent(percent: 48)))]) {
                     ForEach(searchResults.indices, id: \.self) { index in
                         CardView(client: searchResults[index])
-                            .fullScreenCover(isPresented: $showingSponsorView, content: {
-                                SponsorsView()//client: clientList[index]
-                            })
+                            .fullScreenCover(isPresented: $showingSponsorView) {
+                                SponsorsView()
+                            }
                             .aspectRatio(5/4, contentMode: .fit)
                             .onTapGesture {
                                 clientSelected.client = searchResults[index]
                                 moveToSponsorsView()
+                            }
+                            .transaction { transaction in
+                                transaction.disablesAnimations = true
                             }
                     }
                     .padding(.trailing, 10)
@@ -40,14 +41,14 @@ struct ClientsView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("", systemImage: "xmark") {
                         dismiss()
-                    }//.foregroundColor(.black)
+                    }
+                    .tint(.black)
                 }
             }
             .navigationTitle("Influencers")
         }
         .environmentObject(clientSelected)
         .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Type the name")
-        /// Search empty state
         .overlay {
             if !searchText.isEmpty && searchResults.isEmpty {
                 ContentUnavailableView(
